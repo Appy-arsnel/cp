@@ -19,14 +19,26 @@ int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
- int T;
- cin >> T;
- while (T--) {
- int N;
- cin >> N;
- ll a[N];
- FOR(i, N)
- cin >> a[i];
- }
+ int n;
+ cin >> n;
+ int arr[n],officers=0,ans=0,curr,diff;
+FOR(i,n)
+cin>>arr[i];
+
+FOR(i,n){
+    
+    curr=officers;
+    officers+=arr[i];
+    if(curr==0 && arr[i]==-1){
+        ans++;
+    }
+    else if(officers<0){
+        ans++;
+         officers=0;
+    }    
+
+}
+cout<<ans;
+
  return 0;
 }

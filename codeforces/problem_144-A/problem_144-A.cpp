@@ -19,14 +19,40 @@ int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
- int T;
- cin >> T;
- while (T--) {
- int N;
- cin >> N;
- ll a[N];
- FOR(i, N)
- cin >> a[i];
+ int n;
+ cin>>n;
+ int squad[n];
+ FOR(i,n)
+ cin>>squad[i];
+
+ int min=0,max=0,g_min,h_max;
+ FOR(i,n){
+    if(min>squad[i])
+    {
+        g_min=i;
+        min=squad[i];
+    }
+    
+
  }
+ cout<<g_min<<endl;
+ int ans=0,temp,a;
+ for(int i=g_min;i<n-1;i++){
+   squad[i]=temp;
+   squad[i]=squad[i+1];
+   squad[i+1]=temp;
+   g_min++;
+   ans++;
+ }
+ cout<<ans;
+ FOR(i,n){
+    if(squad[i]>max)
+    {
+        h_max=i;
+        max=squad[i];
+    }
+ }
+ ans+=h_max;
+ cout<<ans;
  return 0;
 }

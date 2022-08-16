@@ -19,14 +19,10 @@ int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
- int T;
- cin >> T;
- while (T--) {
- int N;
- cin >> N;
- ll a[N];
- FOR(i, N)
- cin >> a[i];
- }
+ int a,b,diff;
+ cin>>a>>b;
+ cout<<min(a,b)<<" ";
+ diff=abs(a-b);
+ cout<<diff/2;
  return 0;
 }
