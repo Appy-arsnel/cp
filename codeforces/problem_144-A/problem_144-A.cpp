@@ -25,33 +25,34 @@ int main()
  FOR(i,n)
  cin>>squad[i];
 
- int min=0,max=0,g_min,h_max;
- FOR(i,n){
-    if(min>squad[i])
+ int min=squad[0],g_min,h_max;
+ for(int i=1;i<n;i++){
+    if(min>=squad[i])
     {
         g_min=i;
         min=squad[i];
     }
     
-
+  
  }
- cout<<g_min<<endl;
+ 
  int ans=0,temp,a;
  for(int i=g_min;i<n-1;i++){
-   squad[i]=temp;
+   temp=squad[i];
    squad[i]=squad[i+1];
    squad[i+1]=temp;
-   g_min++;
    ans++;
+  
  }
- cout<<ans;
- FOR(i,n){
-    if(squad[i]>max)
+ int max=squad[0];
+ for(int j=1;j<n;j++){
+    if(max<squad[j])
     {
-        h_max=i;
-        max=squad[i];
+        h_max=j;
+        max=squad[j];
     }
  }
+
  ans+=h_max;
  cout<<ans;
  return 0;

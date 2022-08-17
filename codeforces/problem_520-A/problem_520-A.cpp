@@ -19,16 +19,22 @@ int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
- int n;
+   int a[26]={0};
+ int n,diff;
  cin >> n;
  string s;
  cin>>s;
  transform(s.begin(),s.end(),s.begin(),::tolower);
- unordered_set <char> sh;
- FOR(i,n){
-    sh.insert(s[i]);
+ FOR(i,s.length()){
+ diff=(int)s[i]-'a';
+ a[diff]=1;
  }
- if(sh.size()==s.size()){
+ int flag=0;
+ FOR(i,26)
+ if(a[i]==0)
+ flag=1;
+
+ if(flag==0){
     cout<<"YES";
  }else{
     cout<<"NO";
