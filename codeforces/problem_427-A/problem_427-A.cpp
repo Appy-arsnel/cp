@@ -27,14 +27,17 @@ cin>>arr[i];
 
 FOR(i,n){
     
-    curr=officers;
-    officers+=arr[i];
-    if(curr==0 && arr[i]==-1){
+
+     if(officers==0 && arr[i]==-1){
         ans++;
-    }
-    else if(officers<0){
+    }else{
+         officers+=arr[i];
+   
+     if(officers<0){
         ans++;
          officers=0;
+    }
+   
     }    
 
 }
