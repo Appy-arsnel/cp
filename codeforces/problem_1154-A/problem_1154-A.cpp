@@ -20,7 +20,7 @@ int main()
  ios::sync_with_stdio(0);
  cin.tie(0);
  int arr[4],arr_new[3];
- int a,b,c,sum,max;
+ int a,b,c,sum=0,max;
  FOR(i,4)
  cin>>arr[i];
 
@@ -33,15 +33,16 @@ int main()
     }
  }
  int j=0;
-FOR(i,4)
-if(i!=sum){
+for(int i=0;i<4;i++){
+if(i!=sum&&j<3){
     arr_new[j]=arr[i];
     j++;
-}
-
- c=max-arr_new[0];
- a=max-arr_new[2];
- b=max-c-a;
+}}
+ c=arr_new[0]-arr_new[1];
+ b=(c+arr_new[2])/2;
+ a=arr_new[1]-arr_new[2];
+ c=(arr_new[0]+a)/2;
+ a=max-b-c;
  cout<<a<<" "<<b<<" "<<c;
  return 0;
 }
