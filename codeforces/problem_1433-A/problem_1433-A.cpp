@@ -15,38 +15,38 @@ typedef pair<int, int> pi;
 #define PB push_back
 #define POB pop_back
 #define MP make_pair
+
 int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
- int T;
+ int T,flag,ans=0;
  cin >> T;
  while (T--) {
-    string n;
- int sum=0,temp=0;
- cin>>n;
- FOR(i,n.length()){
-    temp+=(int)n[i]-48;
- }
-int a,k;
-k=n.length()-1;
- FOR(i,n.length()){
-    a=(int)n[i]-48;
-    a=a*pow(10,k);
-    k--;
-    cout<<k++<<endl;
-    if(temp!=n[0]&&n[i]!='0'){
-            cout<<a<<" ";
-            continue;
-
-    }
+ int s;
+ cin>>s;
+ int ans=0,b=1,flag=0;
+ int n=0;
+for(int j=1;j<=9;j++){
+    n=0;
+ for(int k=0;k<4;k++){
     
-    if(temp==n[0]){
-        cout<<n[0]<<" ";
-    }
- }
-     cout<<endl;
+    n+=b*pow(10,k);
+    //cout<<n<<endl;
+     ans+=k+1;
+     if(n==s){
+        cout<<ans<<endl;
+        flag=1;
+        break;
 
+    }
+   
+ }
+ b++;
+ if(flag==1){
+    break;
+ }
+}
  }
  return 0;
 }
