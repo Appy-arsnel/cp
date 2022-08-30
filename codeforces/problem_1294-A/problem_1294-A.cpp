@@ -19,17 +19,29 @@ int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
- int t,n;
- cin>>t;
- while (t--){
-   string s,ans={};
-   cin>>s;
-   n=s.length();
-   for(int i=0;i<n;i+=2){
-      ans+=s[i];
-   }
-   ans+=s[n-1];
-   cout<<ans<<endl;
+ int T;
+ cin >> T;
+ int n,a,b,c;
+ int A,B,C;
+ while (T--) {
+ 
+ cin>>a>>b>>c>>n;
+ B=(a+c+n-2*b)/3;
+ C=B+b-c;
+ A=n-B-C;
+ if(A<0||B<0||C<0){
+    cout<<"NO"<<endl;
+    continue;
  }
+ A+=a;
+ B+=b;
+ C+=c;
+ if(A==B&&B==C&&C==A){
+  cout<<"YES"<<endl;
+ }
+ else{
+    cout<<"NO"<<endl;
+ }
+}
  return 0;
 }
