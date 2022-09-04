@@ -19,20 +19,19 @@ int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
-int T;
-    cin>>T;
+ int T;
+ cin >> T;
  while (T--) {
-    int n,k=1,i=1,ans;
-    cin>>n;
-    while(k<=n){
-        if(i%3!=0&&i%10!=3){
-            ans =i;
-            k++;
-        }
-        i++;
+ int n,x,y,ans;
+ cin >> x>>y>>n;
+ for(int i=n;i>=0;i--)
+ {
+    if(i%x==y){
+           ans=i;
     }
-    cout<<ans<<endl;
  }
- 
+ cout<<ans<<endl;
+ }
+
  return 0;
 }

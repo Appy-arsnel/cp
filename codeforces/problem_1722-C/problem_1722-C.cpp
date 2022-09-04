@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 #define max(a, b) (a < b ? b : a)
@@ -19,20 +20,25 @@ int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
-int T;
-    cin>>T;
+ int T;
+ int u=3,a=1,c=0;
+ cin >> T;
  while (T--) {
-    int n,k=1,i=1,ans;
-    cin>>n;
-    while(k<=n){
-        if(i%3!=0&&i%10!=3){
-            ans =i;
-            k++;
-        }
-        i++;
-    }
-    cout<<ans<<endl;
+ int n;
+ cin>>n;
+ unordered_set<string> set;
+ string arr[n];
+ int ans[n]=0;
+ FOR(i,n){
+ cin>>arr[i];
+ set.insert(arr[i]);
  }
- 
+
+ FOR(i,n){
+    if(set.find(a[i])==a[i]){
+
+    }
+ }
+ }
  return 0;
 }

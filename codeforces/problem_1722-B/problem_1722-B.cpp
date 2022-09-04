@@ -19,20 +19,26 @@ int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
-int T;
-    cin>>T;
+ int T;
+ cin >> T;
+ int n;
+ string s1,s2;
  while (T--) {
-    int n,k=1,i=1,ans;
-    cin>>n;
-    while(k<=n){
-        if(i%3!=0&&i%10!=3){
-            ans =i;
-            k++;
-        }
-        i++;
+ cin>>n;
+ cin>>s1>>s2;
+    FOR(i,n){
+         if(s1[i]=='G')
+            s1[i]='B';
+        if(s2[i]=='G')
+            s2[i]='B';
     }
-    cout<<ans<<endl;
- }
+    if(s1==s2){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
  
+ }
  return 0;
 }

@@ -19,20 +19,39 @@ int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
-int T;
-    cin>>T;
+ int T;
+ cin >> T;
  while (T--) {
-    int n,k=1,i=1,ans;
-    cin>>n;
-    while(k<=n){
-        if(i%3!=0&&i%10!=3){
-            ans =i;
-            k++;
+ int N;
+ cin >> N;
+ int a[N];
+ FOR(i, N)
+ cin >> a[i];
+ int shuffle;
+ cin>>shuffle;
+ int b[shuffle];
+ FOR(i, shuffle)
+ cin >> b[i];
+int index,temp,d;
+FOR(i,shuffle)
+{
+    index=b[i];
+        d=0;
+
+    for(int j=index;j<N;j++){
+
+        for(int k=j;k>d;k--){
+          temp=a[k-1];
+          a[k-1]=a[k];
+          a[k]=temp;
         }
-        i++;
+
+            d++;
+
     }
-    cout<<ans<<endl;
+
+}
+cout<<a[0]<<endl;
  }
- 
  return 0;
 }

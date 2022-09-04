@@ -19,34 +19,20 @@ int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
- int T;
+ int T,n,ans;
+ string s;
  cin >> T;
- while (T--) {
-    string n;
- int sum=0,temp=0;
- cin>>n;
- FOR(i,n.length()){
-    temp+=(int)n[i]-48;
- }
-int a,k;
-k=n.length()-1;
- FOR(i,n.length()){
-    a=(int)n[i]-48;
-    a=a*pow(10,k);
-    k--;
-    cout<<k++<<endl;
-    if(temp!=n[0]&&n[i]!='0'){
-            cout<<a<<" ";
-            continue;
+ while(T--){
 
-    }
-    
-    if(temp==n[0]){
-        cout<<n[0]<<" ";
-    }
- }
-     cout<<endl;
-
+   cin>>s;
+    n=s.length();
+   FOR(i,n){
+   if(s[i]!='0'){
+      ans=(int)s[i]-48;
+      ans=ans*pow(10,(n-i-1));
+      cout<<ans<< " ";
+   }}
+   cout<<endl;
  }
  return 0;
 }
