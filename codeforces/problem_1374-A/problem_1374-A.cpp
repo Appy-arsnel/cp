@@ -22,15 +22,13 @@ int main()
  int T;
  cin >> T;
  while (T--) {
- int n,x,y,ans;
- cin >> x>>y>>n;
- for(int i=n;i>=0;i--)
- {
-    if(i%x==y){
-           ans=i;
-    }
- }
- cout<<ans<<endl;
+ long long  int n,x,y,k;
+ cin>>x>>y>>n;
+
+ if(x>y)
+ k=n-(x%y+n%x);
+ cout<<k<<"\n";
+
  }
 
  return 0;

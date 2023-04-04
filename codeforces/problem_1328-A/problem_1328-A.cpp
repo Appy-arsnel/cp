@@ -36,7 +36,11 @@ int main()
     //     j++;
 
     // }
-    cout<<a%b<<"\n";
+    if(a%b==0){
+      cout<<0<<"\n";
+    }
+    else
+    cout<<b-a%b<<"\n";
 
  }
 
