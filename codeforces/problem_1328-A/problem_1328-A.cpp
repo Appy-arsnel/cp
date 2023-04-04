@@ -20,24 +20,26 @@ int main()
  ios::sync_with_stdio(0);
  cin.tie(0);
  int T;
- int a,b,j=0;
+ int a,b,j;
  cin >> T;
   int ans[T];
 
  while (T--) {
  cin>>a>>b;
- for(int i=0;;i++){
-    if(a%b==0){
-        ans[j]=i+1;
-        j++;
-        break;
-    }
-    a=a+1;
+ j=0;
+ if(a%b==0){
+    cout<<0<<"\n";
+    continue;
  }
- }
- FOR(i,T){
-     cout<<ans[i]<<endl;
+    // while(a%b!=0){
+    //     a+=1;
+    //     j++;
+
+    // }
+    cout<<a%b<<"\n";
 
  }
+
+ 
  return 0;
 }
