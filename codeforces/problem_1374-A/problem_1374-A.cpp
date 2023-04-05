@@ -25,8 +25,21 @@ int main()
  long long  int n,x,y,k;
  cin>>x>>y>>n;
 
- if(x>y)
- k=n-(x%y+n%x);
+ k=n%x;
+ if(y>k){
+ k=y-k;
+ k=n+k-x;
+ }
+ else if(y<k){
+    k=n-(n%x-y);
+ }
+ else{
+  k=n;
+  }
+
+
+ 
+
  cout<<k<<"\n";
 
  }
