@@ -15,43 +15,42 @@ typedef pair<int, int> pi;
 #define PB push_back
 #define POB pop_back
 #define MP make_pair
+
+// void shuffle_cards(int (&c)[],int n,int s){
+//     int last=n-1;
+//     FOR(i,s){
+//         swap(c[i],c[last]);
+//         last--;
+//     }
+    
+//  }
 int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
- int T;
+ int T,n,m,shuffle;
  cin >> T;
  while (T--) {
- int N;
- cin >> N;
- int a[N];
- FOR(i, N)
- cin >> a[i];
- int shuffle;
- cin>>shuffle;
- int b[shuffle];
- FOR(i, shuffle)
- cin >> b[i];
-int index,temp,d;
-FOR(i,shuffle)
-{
-    index=b[i];
-        d=0;
-
-    for(int j=index;j<N;j++){
-
-        for(int k=j;k>d;k--){
-          temp=a[k-1];
-          a[k-1]=a[k];
-          a[k]=temp;
-        }
-
-            d++;
-
+    cin>>n;
+    int cards[n];
+    FOR(i,n)
+     cin>>cards[i];
+    cin>>m;
+    FOR(i,m){
+        cin>>shuffle;
+        //shuffle_cards(cards,n,shuffle);
+        int last=n-1;
+         FOR(j,shuffle){
+             swap(cards[j],cards[last]);
+             last--;
+    }
     }
 
-}
-cout<<a[0]<<endl;
+    cout<<cards[0]<<"\n";
+    
  }
+
+
+ 
  return 0;
 }
