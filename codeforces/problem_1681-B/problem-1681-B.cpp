@@ -38,13 +38,15 @@ int main()
     cin>>m;
     FOR(i,m){
         cin>>shuffle;
-        //shuffle_cards(cards,n,shuffle);
+       // shuffle_cards(cards,n,shuffle);
         int last=n-1;
          FOR(j,shuffle){
              swap(cards[j],cards[last]);
              last--;
     }
-    }
+        // swap(cards[shuffle],cards[n-1]);
+    
+}
 
     cout<<cards[0]<<"\n";
     
