@@ -12,7 +12,7 @@ int knapsack_01(int wt[],int v[], int W,int n){
          dp[i][j]==0;
 
         // Recursive to Iterative 
-        else if(W>=wt[i-1]){
+        else if(j>=wt[i-1]){
             dp[i][j] = max(v[i-1]+dp[i-1][j-wt[i-1]],dp[i-1][j]);
 
         }
@@ -20,9 +20,18 @@ int knapsack_01(int wt[],int v[], int W,int n){
             dp[i][j] = dp[i-1][j];        
         
     }
+//     cout<<"\n\n";
+//   for(int i=0; i< n+1; i++)
+//      {for(int j=0; j< W+1; j++){
+//         cout<<dp[i][j]<<"\t";
 
+//      }
+//      cout<<endl;
+//      }
 
     return dp[n][W];
+
+  
     
 }
 
@@ -49,7 +58,11 @@ int main(){
     }
    
     
-    cout<<"Max Profit of 0/1 Knapsack is :\t" <<knapsack_01(weight,value,capacity,n);
+    cout<<"Max Profit of 0/1 Knapsack is :\t" <<knapsack_01(weight,value,capacity,n)<<endl;
+
+     
+
+
     
     return 0;
 
