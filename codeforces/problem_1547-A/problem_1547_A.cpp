@@ -1,6 +1,7 @@
+// url: https://codeforces.com/contest/1547/problem/B
+
 #include <bits/stdc++.h>
 using namespace std;
-
 #define max(a, b) (a < b ? b : a)
 #define min(a, b) ((a > b) ? b : a)
 #define mod 1e9 + 7
@@ -16,44 +17,33 @@ typedef pair<int, int> pi;
 #define PB push_back
 #define POB pop_back
 #define MP make_pair
-void rotateVector(vector<int> &v , int position){
+bool isAlaphabetical(string s){
+    find(s.begin(),s.end(),'a');
 
-    rotate(v.begin(),v.begin()+position,v.end());
-
-
-    return;
+    return false;
 }
+
+
 int main()
 {
  ios::sync_with_stdio(0);
  cin.tie(0);
- int T,n,m,position,data;
+ int T,n;
+ string s = "";
+
+
  cin >> T;
  while (T--) {
-    cin>>n;
-    
-    vector<int> cards;
-    
-    
-    FOR(i,n){
-        cin>>data;
-        cards.push_back(data);
+    cin>>s;
+    if(isAlaphabetical(s)){
+        cout<<"YES\n";
+        continue;
     }
-    int idx = 0;
-    cin>>m;
-    FOR(i,m){
-        cin>>position;
-        idx+=position;
-        idx%=n; 
-        
-        
-    }
-    cout<<cards[idx]<<endl;
-
     
-}
+    cout<<"NO\n";
 
-    
+
+ }
 
  return 0;
- }
+}
