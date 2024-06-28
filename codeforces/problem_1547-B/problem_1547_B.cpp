@@ -30,6 +30,8 @@ int main()
  cin.tie(0);
  int T,n;
  string s = "";
+    vector <string> dict;
+    
 
 
  cin >> T;
